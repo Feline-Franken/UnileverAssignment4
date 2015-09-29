@@ -1,8 +1,8 @@
 
-//Retrieving data from database met inferencing
+//Retrieving data from database
 $('#linkTest').on('click',function(e){
 	$('.infotable').empty();
-
+		//Check for reasoning
 		var reasoning = $('.reasoning');
 		if(reasoning)
 			reasoning = 'true';
@@ -10,7 +10,7 @@ $('#linkTest').on('click',function(e){
 			reasoning = 'false';
 		//our query
 		var query = $('#query14').val();
-		//the endpoint used to access the database
+		//Splitting up our query to check for the column names
 		var q = query.split('WHERE');
 		q = q[1].split('?');
 		console.log(query);
@@ -26,10 +26,8 @@ $('#linkTest').on('click',function(e){
 			}
 			i++;
 		});
-/*
-*/
 
-
+	//the endpoint used to access the database
 		var endpoint = 'http://localhost:5820/test/query';
 		//we want a JSON back
 		var format = 'JSON';
@@ -57,31 +55,5 @@ $('#linkTest').on('click',function(e){
 					$('.infotable').html(el);
 				});
 	});
-
-	//Retrieving data from database without inferencing
-// $('#linkgras').on('click',function(e){
-// 	console.log('forogal');
-// 		//our query
-// 		var query = $('#querygras').val();
-// 		//the endpoint used to access the database
-// 		var endpoint = 'http://localhost:5820/test/query';
-// 		//we want a JSON back
-// 		var format = 'JSON';
-// 				//sending a get request to retrieve the data
-// 				$.get('/sparql',data={'endpoint': endpoint, 'query': query, 'format': format, 'reasoning': 'false'}, function(data){
-// 					//creating a table
-// 					var tHead = '<tr><th>Product</th><th>Branch</th></tr>';
-// 					var tBody = '';
-// 					//Looping through the retrieved data and adding a row for each object
-// 					$.each(data, function(index,value){
-// 						tBody += '<tr><td>'+value.Product+'</td><td>'+value.Branch+'</td></tr>';
-// 					});
-// 					//combining the table head and the table body
-// 					var $el = '<table border="1" style="width:100%">'+tHead+tBody+'</table>';
-// 					//adding the table to the html
-// 					$('.infotable2').html($el);
-// 					console.log('lolollol');
-// 				});
-// 	});
 
 

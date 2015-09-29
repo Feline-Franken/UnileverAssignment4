@@ -45,32 +45,6 @@ SELECT * WHERE {?Food rdfs:subClassOf ?Branch}
 			</div>
 
 		</div>
-
-<!-- informatie opvragen zonder inferencing-->
-	<!-- <div class='row'>
-				<div class='col-lg-6'>
-					<h3>Getting information from the database <small>Without inferencing</small></h3>
-					<p>In this area users can ask information from the database with Sparql query's and without inferencing</p>
-					<textarea id='querygras' class='sparql' style='width: 100%' rows='10'>
-
-SELECT * WHERE {?Food rdfs:subClassOf ?Branch}
-</textarea>
-
-<div class='row'>
-				<div class='col-lg-6'>
-					<h3>Retrieve from database</h3>
-					<div><a id="linkgras" class='btn btn-primary'>Go</a></div>
-					<div class="infotable2"></div>	
-					 <div id="kaasbroodje" class='well' ='scroll: both; overflow: auto; height: 10em;'>This is where the server response will appear.</div>
-				</div>	
-			</div>
-					
-				</div>
-			</div>
-
-		</div>	
-
-		</div> -->
 		<script src='{{ url_for("static", filename="js/jquery-1.11.0.min.js") }}' type='text/javascript'></script>
 		<script src='{{ url_for("static", filename="js/tutorial.js") }}' type='text/javascript'></script>
 
